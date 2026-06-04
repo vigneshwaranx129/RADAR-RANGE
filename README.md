@@ -17,45 +17,13 @@ The Radar Range Equation is a fundamental formula used in radar system design to
 
 
 ## CODE 
-```
-clear;
-clf();
 
-c = 3e8;
-f = 3e9;
-lambda = c / f;
-G_dB = 30;
-G = 10^(G_dB / 10);
-sigma = 1;
-Pt_fixed = 100e3;
-Pr_min = 1e-12;
-R = 1000:500:100000;
-
-num1 = Pt_fixed * (G^2) * (lambda^2) * sigma;
-den1 = ((4 * %pi)^3) * (R.^4);
-Pr = num1 ./ den1;
-Pr_dBm = 10 * log10(Pr / 1e-3);
-
-num2 = Pr_min * ((4 * %pi)^3) * (R.^4);
-den2 = (G^2) * (lambda^2) * sigma;
-Pt_req = num2 ./ den2;
-Pt_req_dBW = 10 * log10(Pt_req);
-
-subplot(2, 1, 1);
-plot(R / 1000, Pr_dBm, "r-", "linewidth", 2);
-xtitle("Received Power vs. Radar Range", "Range (km)", "Received Power (dBm)");
-xgrid();
-
-subplot(2, 1, 2);
-plot(R / 1000, Pt_req_dBW, "b-", "linewidth", 2);
-xtitle("Required Transmitted Power vs. Radar Range", "Range (km)", "Required Transmitted Power (dBW)");
-xgrid();
-```
-
+<img width="1600" height="999" alt="WhatsApp Image 2026-06-04 at 10 38 56" src="https://github.com/user-attachments/assets/04d8bc67-b32d-473b-a05c-5ab3c21450e4" />
 
 ## OUTPUT 
 
-<img width="1918" height="1111" alt="image" src="https://github.com/user-attachments/assets/e39d1b6a-93c4-4b6f-aa5e-8a7f849932ff" />
+<img width="1600" height="914" alt="WhatsApp Image 2026-06-04 at 10 01 43" src="https://github.com/user-attachments/assets/1dab2685-e725-4d75-b760-1fb7ad508a4a" />
+
 
 
 ## Result:
